@@ -43,6 +43,9 @@ module.exports = {
       },
       margin:{
         '550':'550px',
+      },
+      backgroundImage: {
+        'check-pattern': "url('./components/assets/pic/check.svg')",
       }
     },
   },
