@@ -1,6 +1,7 @@
 import List from "./list";
 
-const Todo = () => {
+const Todo = ({isChangen,setIschangen,list, setNewlist}) => {
+
   return (
       <section className="container mx-auto h-250">
         <img
@@ -9,7 +10,7 @@ const Todo = () => {
           alt=""
         />
         <section className="absolute mx-auto right-0 left-0">
-          <List />
+           <List isChangen={isChangen} setIschangen={setIschangen} list={list} setNewlist={setNewlist}/> 
         </section>
       </section>
   

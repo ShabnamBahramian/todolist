@@ -46,7 +46,8 @@ module.exports = {
       },
       backgroundImage: {
         'check-pattern': "url('./components/assets/pic/check.svg')",
-      }
+      },
+    
     },
   },
   plugins: [
