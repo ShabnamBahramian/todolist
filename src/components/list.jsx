@@ -132,6 +132,7 @@ const List = ({isChangen,setIschangen,list,setNewlist }) => {
           isComplte={newTask.isComplte}
         />
       </div>
+      
     </div>
   );
 };
