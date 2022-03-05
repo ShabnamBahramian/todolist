@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-const Footer = ({ deletComplete, list, btnHanlde,isComplte}) => {
- 
+const Footer = ({deleteComplete, list, btnHanlde, isComplte }) => {
+  // const[n,setN]=useState([]);
   const [state, setState] = useState([]);
   const [Complete, setComplete] = useState([]);
   useEffect(() => {
@@ -10,30 +10,53 @@ const Footer = ({ deletComplete, list, btnHanlde,isComplte}) => {
   useEffect(() => {
     setComplete(state.filter((s) => s.isComplte === false));
   }, [state]);
+
   // const handleBtn = (e) => {
   //   setType(e.target.value);
-  //   console.log(type, "type");
+
+  // };
+  // const deletComplete = (isComplte) => {
+  //   let arr = []
+  //     arr = list.filter((s) =>s.isComplte === true);
+  //    console.log("filter",arr);
+  
   // };
 
   return (
-    <section className="flex w-500 h-14 rounded-sm text-sm text-gray-400 font-bold bg-white cursor-pointer">
-      <div className=" flex-row w-32 h-14 pt-4 px-4">
-        <span className="">{Complete.length} items left </span>
+    <section className=" md:flex rounded-sm text-sm text-gray-400 font-bold bg-white cursor-pointer justify-between">
+      <div className=" flex-row h-14 pt-4 px-4 sm:border-b-2 sm:border-gray-200 md:border-none">
+        <span className=" block text-center">
+          {Complete.length} items left{" "}
+        </span>
       </div>
 
-      <div className="flex px-4  flex-row w-60 h-14">
-        <button value="All" onClick={btnHanlde} className="flex-row mr-6 font-bold">
+      <div className="flex  md:flex-row h-14 sm:border-b-2 sm:border-gray-200 md:border-none">
+        <button
+          value="All"
+          onClick={btnHanlde}
+          className=" flex-1 md:flex-row md:mr-4  font-bold "
+        >
           All
         </button>
-        <button value={false}  onClick={btnHanlde} className="flex-row mr-6 font-bold">
+        <button
+          value={false}
+          onClick={btnHanlde}
+          className=" flex-1 md:flex-row  md:mr-4 font-bold"
+        >
           Active
         </button>
-        <button value={true} onClick={btnHanlde} className="flex-row mr-6 font-bold">
+        <button
+          value={true}
+          onClick={btnHanlde}
+          className="flex-1 md:flex-row  md:mr-4 font-bold"
+        >
           Completed
         </button>
       </div>
-      <div className=" flex-row w-32 pt-4 px-2">
-        <span onClick={deletComplete}>Clear Completed</span>
+      <div className=" md:flex-row pt-4 pb-4 px-2">
+        <span className="block text-center" onClick={deleteComplete}>
+          Clear Completed
+        </span>
       </div>
     </section>
   );
